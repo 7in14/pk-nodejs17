@@ -7,7 +7,7 @@
     "start": "nodemon server.js -e js,pug",
     "test": "lab -c -L -C -l -v --threshold 95 --assert code",
     "test-cover": "lab -c -L --assert code -r html -o ./test/artifacts/coverage.html && open ./test/artifacts/coverage.html",
-    "nyc": "nyc yarn test"
+    "nyc": "nyc yarn test && nyc report --reporter=lcovonly"
   },
   "repository": {
     "type": "git",
