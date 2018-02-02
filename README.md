@@ -2,12 +2,14 @@
 
 Sample generated Rest API
 
-[![Dependency Status](https://david-dm.org/karpikpl/hapi17sample.svg)](https://david-dm.org/karpikpl/hapi17sample)
-[![devDependency Status](https://david-dm.org/karpikpl/hapi17sample/dev-status.svg?theme=shields.io)](https://david-dm.org/karpikpl/hapi17sample?type=dev)
-[![Build Status](https://travis-ci.org/karpikpl/hapi17sample.svg?branch=master)](https://travis-ci.org/karpikpl/hapi17sample)
+[![Dependency Status](https://david-dm.org/7in14/pk-nodejs17.svg)](https://david-dm.org/7in14/pk-nodejs17)
+[![devDependency Status](https://david-dm.org/7in14/pk-nodejs17/dev-status.svg?theme=shields.io)](https://david-dm.org/7in14/pk-nodejs17?type=dev)
+[![Build Status](https://travis-ci.org/7in14/pk-nodejs17.svg?branch=master)](https://travis-ci.org/7in14/pk-nodejs17)
+[![Maintainability](https://api.codeclimate.com/v1/badges/ffb71be3b54db3f9382b/maintainability)](https://codeclimate.com/github/7in14/pk-nodejs17/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/ffb71be3b54db3f9382b/test_coverage)](https://codeclimate.com/github/7in14/pk-nodejs17/test_coverage)
 
 # Description
-Hapi 17.0 sample build based on y
+Hapi 17.0 sample build based on https://github.com/jedireza/generator-hapi-style
 
 ## Usage
 
