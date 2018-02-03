@@ -4,8 +4,6 @@ const Lab = require('lab');
 const Code = require('code');
 const Config = require('../../../config');
 const Hapi = require('hapi');
-const IndexPlugin = require('../../../server/api/index');
-
 
 const lab = exports.lab = Lab.script();
 let server;
@@ -14,10 +12,7 @@ let server;
 lab.beforeEach(async () => {
 
     const plugins = {
-        plugin: {
-            name: 'api',
-            register: IndexPlugin.register
-        },
+        plugin: require('../../../server/api/index'),
         routes: {
             prefix: '/api'
         }

@@ -4,9 +4,6 @@ const Lab = require('lab');
 const Code = require('code');
 const Config = require('../../../config');
 const Hapi = require('hapi');
-const Vision = require('vision');
-const HomePlugin = require('../../../server/web/index');
-
 
 const lab = exports.lab = Lab.script();
 let server;
@@ -14,16 +11,7 @@ let server;
 
 lab.beforeEach(async () => {
 
-    const plugins = [{
-        plugin:  Vision
-    },
-    {
-        plugin: {
-            name: 'web',
-            register: HomePlugin.register,
-            dependencies: 'vision'
-        }
-    }];
+    const plugins = [require('vision'), require('../../../server/web/index')];
     server = Hapi.Server({
         port: Config.get('/port/web')
     });

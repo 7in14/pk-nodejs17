@@ -21,25 +21,14 @@ const manifest = {
     },
     register: {
         plugins: [
+            'vision',
             {
-                plugin:  'vision'
-            },
-            {
-                plugin: {
-                    name: 'api',
-                    register: require('./server/api/index').register
-                },
+                plugin: './server/api/index',
                 routes: {
                     prefix: '/api'
                 }
             },
-            {
-                plugin: {
-                    name: 'web',
-                    register: require('./server/web/index').register,
-                    dependencies: 'vision'
-                }
-            }
+            './server/web/index'
         ]
     }
 };
