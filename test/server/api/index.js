@@ -35,7 +35,7 @@ lab.experiment('Index Plugin', () => {
 
         return await server.inject(request, (response) => {
 
-            Code.expect(response.result.message).to.match(/welcome to the plot device/i);
+            Code.expect(response.result.message).to.match(/welcome to the 7in14 app/i);
             Code.expect(response.statusCode).to.equal(200);
         });
     });

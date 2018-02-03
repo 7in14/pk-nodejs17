@@ -30,7 +30,7 @@ lab.experiment('Home Page View', () => {
 
         return await server.inject(request, (response) => {
 
-            Code.expect(response.result).to.match(/activate the plot device/i);
+            Code.expect(response.result).to.match(/activate the 7in14 app/i);
             Code.expect(response.statusCode).to.equal(200);
 
         });

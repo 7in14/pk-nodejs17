@@ -9,7 +9,7 @@ const criteria = {
 
 
 const manifest = {
-    $meta: 'This file defines the plot device.',
+    $meta: 'This file defines the 7in14 app.',
     server: {
         debug: {
             request: ['error']
@@ -28,7 +28,32 @@ const manifest = {
                     prefix: '/api'
                 }
             },
-            './server/web/index'
+            './server/web/index',
+            {
+                plugin: 'good',
+                options: {
+                    ops: {
+                        interval: 1000
+                    },
+                    reporters: {
+                        myConsoleReporter: [{
+                            module: 'good-squeeze',
+                            name: 'Squeeze',
+                            args: [{ log: '*', response: '*' }]
+                        }, {
+                            module: 'good-console'
+                        }, 'stdout'],
+                        myHTTPReporter: [{
+                            module: 'good-squeeze',
+                            name: 'Squeeze',
+                            args: [{ error: '*' }]
+                        }, {
+                            module: 'good-http',
+                            args: ['http://localhost:3000']
+                        }]
+                    }
+                }
+            }
         ]
     }
 };

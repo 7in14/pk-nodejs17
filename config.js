@@ -9,7 +9,7 @@ const criteria = {
 
 
 const config = {
-    $meta: 'This file configures the plot device.',
+    $meta: 'This file configures the 7in14 app.',
     projectName: 'sample',
     port: {
         web: {
