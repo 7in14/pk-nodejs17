@@ -42,15 +42,7 @@ const manifest = {
                             args: [{ log: '*', response: '*' }]
                         }, {
                             module: 'good-console'
-                        }, 'stdout'],
-                        myHTTPReporter: [{
-                            module: 'good-squeeze',
-                            name: 'Squeeze',
-                            args: [{ error: '*' }]
-                        }, {
-                            module: 'good-http',
-                            args: ['http://localhost:3000']
-                        }]
+                        }, 'stdout']
                     }
                 }
             }
