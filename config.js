@@ -15,6 +15,7 @@ const config = {
         web: {
             $filter: 'env',
             test: 9090,
+            docker: 3000,
             $default: 8080
         }
     }
