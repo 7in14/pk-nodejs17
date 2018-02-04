@@ -37,6 +37,5 @@ lab.experiment('Home Page View', () => {
             .to.match(/7in14 - Node.js/i);
         Code.expect(response.statusCode)
             .to.equal(200);
-
     });
 });
