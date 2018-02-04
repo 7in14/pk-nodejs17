@@ -2,8 +2,7 @@
 
 const Lab = require('lab');
 const Code = require('code');
-const Config = require('../../../config');
-const Hapi = require('hapi');
+const ApiTestSetup = require('./apiTestSetup');
 
 const lab = exports.lab = Lab.script();
 let server;
@@ -11,16 +10,7 @@ let server;
 
 lab.beforeEach(async () => {
 
-    const plugins = {
-        plugin: require('../../../server/api/index'),
-        routes: {
-            prefix: '/api'
-        }
-    };
-    server = Hapi.Server({
-        port: Config.get('/port/web')
-    });
-    return await server.register(plugins);
+    server = await ApiTestSetup.setupServer();
 });
 
 
@@ -33,10 +23,12 @@ lab.experiment('Index Plugin', () => {
             url: '/api'
         };
 
-        return await server.inject(request, (response) => {
+        const response = await server.inject(request);
 
-            Code.expect(response.result.message).to.match(/welcome to the 7in14 app/i);
-            Code.expect(response.statusCode).to.equal(200);
-        });
+        Code.expect(response.result.message)
+            .to.match(/welcome to the 7in14 app/i);
+        Code.expect(response.statusCode)
+            .to.equal(200);
     });
+
 });

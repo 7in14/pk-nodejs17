@@ -10,8 +10,7 @@ const startServer = async () => {
         console.log('Started the 7in14 app on port ' + server.info.port);
 
         return server;
-    }
-    catch (err) {
+    } catch (err) {
         console.error(err);
         process.exit(1);
     }
