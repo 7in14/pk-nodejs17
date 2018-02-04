@@ -23,18 +23,20 @@ lab.experiment('Home Page View', () => {
 
     lab.test('home page renders properly', async () => {
 
+        // Arrange
         const request = {
             method: 'GET',
             url: '/'
         };
 
-        return await server.inject(request, (response) => {
+        // Act
+        const response = await server.inject(request);
 
-            Code.expect(response.result)
-                .to.match(/activate the 7in14 app/i);
-            Code.expect(response.statusCode)
-                .to.equal(200);
+        // Assert
+        Code.expect(response.result)
+            .to.match(/7in14 - Node.js/i);
+        Code.expect(response.statusCode)
+            .to.equal(200);
 
-        });
     });
 });

@@ -10,12 +10,15 @@ const lab = exports.lab = Lab.script();
 
 lab.experiment('App', () => {
 
-    lab.test('it composes a server', (done) => {
+    lab.test('it composes a server', {
+        plan: 1
+    }, async () => {
 
-        Composer((err, composedServer) => {
+        // Act
+        const composedServer = await Composer();
 
-            Code.expect(composedServer).to.be.an.object();
-            done(err);
-        });
+        // Assert
+        Code.expect(composedServer)
+            .to.be.an.object();
     });
 });

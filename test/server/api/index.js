@@ -18,13 +18,16 @@ lab.experiment('Index Plugin', () => {
 
     lab.test('it returns the default message', async () => {
 
+        // Arrange
         const request = {
             method: 'GET',
             url: '/api'
         };
 
+        // Act
         const response = await server.inject(request);
 
+        // Assert
         Code.expect(response.result.message)
             .to.match(/welcome to the 7in14 app/i);
         Code.expect(response.statusCode)

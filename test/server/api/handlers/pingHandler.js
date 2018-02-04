@@ -18,13 +18,16 @@ lab.experiment('Ping route', () => {
 
     lab.test('it returns pong for ping route', async () => {
 
+        // Arrange
         const request = {
             method: 'GET',
             url: '/api/ping'
         };
 
+        // Act
         const response = await server.inject(request);
 
+        // Assert
         Code.expect(response.result)
             .to.equal('pong');
         Code.expect(response.statusCode)

@@ -18,13 +18,16 @@ lab.experiment('File route', () => {
 
     lab.test('it returns readme file', async () => {
 
+        // Arrange
         const request = {
             method: 'GET',
             url: '/api/file'
         };
 
+        // Act
         const response = await server.inject(request);
 
+        // Assert
         Code.expect(response.result)
             .to.match(/Sample generated Rest API/);
         Code.expect(response.statusCode)
