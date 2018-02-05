@@ -7,6 +7,7 @@ const crimeValidator = {
             query: Joi.string()
                 .min(1)
                 .optional()
+                .description('query should specify what crimes to include')
         }
     }
 };

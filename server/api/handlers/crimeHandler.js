@@ -28,7 +28,20 @@ const options = {
                 .code(500);
         }
 
-        const crimes = JSON.parse(crimesData);
+        const crimes = JSON.parse(crimesData).map(({
+            district,
+            inc_datetime,
+            lcr,
+            lcr_desc
+        }) => {
+
+            return {
+                district,
+                inc_datetime,
+                lcr,
+                lcr_desc
+            };
+        });
 
         if (!query || query.length < 1) {
             console.info('No query - returning all results');
@@ -38,7 +51,7 @@ const options = {
         return crimes.filter((c) => c.lcr_desc.match(query));
     },
 
-    validate: CrimeValidator.query
+    validate: CrimeValidator.validate
 };
 
 module.exports = options;
