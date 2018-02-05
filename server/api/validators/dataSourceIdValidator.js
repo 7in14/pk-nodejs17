@@ -2,16 +2,16 @@
 const Joi = require('joi');
 const ErrorHandler = require('../handlers/errorHandler');
 
-const crimeValidator = {
+const dataSourceIdValidator = {
     validate: {
-        query: {
-            query: Joi.string()
+        params: {
+            id: Joi.string()
                 .min(1)
                 .optional()
-                .description('query should specify what crimes to include')
+                .description('id of the data source')
         },
         failAction: ErrorHandler.handleError
     }
 };
 
-module.exports = crimeValidator;
+module.exports = dataSourceIdValidator;

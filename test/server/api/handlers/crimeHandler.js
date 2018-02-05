@@ -17,23 +17,13 @@ lab.beforeEach(async () => {
 const crimeData = [{
     "district": "SOUTHEAST",
     "inc_datetime": "2018-02-02T00:00:00.000",
-    "inc_no": "P18005857",
     "lcr": "71A",
     "lcr_desc": "Traffic/DWI (Driving While Impaired)",
-    "location": {
-        "type": "Point",
-        "coordinates": [-78.551901663482, 35.760454956736]
-    }
 }, {
     "district": "SOUTHEAST",
     "inc_datetime": "2018-02-02T00:39:00.000",
-    "inc_no": "P18005860",
     "lcr": "54D",
     "lcr_desc": "Drug Violation/Misdemeanor",
-    "location": {
-        "type": "Point",
-        "coordinates": [-78.544612050741, 35.757214096643]
-    }
 }];
 
 lab.experiment('Crime route', () => {
@@ -101,8 +91,8 @@ lab.experiment('Crime route', () => {
         // Assert
         Code.expect(response.result)
             .to.have.length(1);
-        Code.expect(response.result[0].inc_no)
-            .to.equal('P18005860');
+        Code.expect(response.result[0].lcr_desc)
+            .to.equal('Drug Violation/Misdemeanor');
         Code.expect(response.statusCode)
             .to.equal(200);
         Code.expect(crimeApi.isDone())

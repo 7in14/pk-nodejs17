@@ -1,24 +1,9 @@
-db.restaurants.insert({
-    "address": {
-        "street": "2 Avenue",
-        "zipcode": "10075",
-        "building": "1480",
-        "coord": [-73.9557413, 40.7720266]
+db.pk_7in14.insert([{
+        "name": "US States",
+        "url": "http://services.groupkt.com/state/get/USA/all"
     },
-    "borough": "Manhattan",
-    "cuisine": "Italian",
-    "grades": [
-        {
-            "date": ISODate("2014-10-01T00:00:00Z"),
-            "grade": "A",
-            "score": 11
-         },
-        {
-            "date": ISODate("2014-01-16T00:00:00Z"),
-            "grade": "B",
-            "score": 17
-         }
-      ],
-    "name": "Vella",
-    "restaurant_id": "41704620"
-})
+    {
+        "name": "JSON placeholder",
+        "url": "https://jsonplaceholder.typicode.com/users"
+    }
+])

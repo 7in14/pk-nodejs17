@@ -1,7 +1,7 @@
 'use strict';
+const DataSourceIdValidator = require('../validators/dataSourceIdValidator');
 
-const dummyData = [
-    {
+const dummyData = [{
         id: '1',
         name: 'notifier 1',
         url: 'http://notifier1.com'
@@ -46,7 +46,9 @@ const del = {
         // todo: add Boom
         return h.response(`Could not delete, data source with id ${id} not found`)
             .code(404);
-    }
+    },
+
+    validate: DataSourceIdValidator.validate
 };
 
 const get = {
@@ -72,7 +74,9 @@ const get = {
         // todo: add Boom
         return h.response(`Data source with id ${id} not found`)
             .code(404);
-    }
+    },
+
+    validate: DataSourceIdValidator.validate
 };
 
 const add = {
