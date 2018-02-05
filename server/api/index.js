@@ -1,6 +1,6 @@
 'use strict';
 const PingHandler = require('./handlers/pingHandler');
-const NotifierHandler = require('./handlers/notifierHandler');
+const DataSourceHandler = require('./handlers/dataSourceHandler');
 const FileHandler = require('./handlers/fileHandler');
 const CrimeHandler = require('./handlers/crimeHandler');
 const WelcomeHandler = require('./handlers/welcomeHandler');
@@ -21,26 +21,26 @@ const register = function (server, options) {
 
     server.route({
         method: 'GET',
-        path: '/notifier',
-        options: NotifierHandler.getNotifiers
+        path: '/dataSources',
+        options: DataSourceHandler.getAll
     });
 
     server.route({
         method: 'DELETE',
-        path: '/notifier/{id}',
-        options: NotifierHandler.deleteNotifiers
+        path: '/dataSource/{id}',
+        options: DataSourceHandler.del
     });
 
     server.route({
         method: 'GET',
-        path: '/notifier/{id}',
-        options: NotifierHandler.getNotifier
+        path: '/dataSource/{id}',
+        options: DataSourceHandler.get
     });
 
     server.route({
         method: 'PUT',
-        path: '/notifier',
-        options: NotifierHandler.addNotifier
+        path: '/dataSource',
+        options: DataSourceHandler.add
     });
 
     server.route({

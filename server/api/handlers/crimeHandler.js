@@ -1,5 +1,6 @@
 'use strict';
 const Got = require('got');
+const CrimeValidator = require('../validators/crimeValidator');
 
 const getCrimes = async () => {
 
@@ -35,7 +36,9 @@ const options = {
         }
 
         return crimes.filter((c) => c.lcr_desc.match(query));
-    }
+    },
+
+    validate: CrimeValidator.query
 };
 
 module.exports = options;

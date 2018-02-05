@@ -7,6 +7,7 @@ Sample generated Rest API
 [![Build Status](https://travis-ci.org/7in14/pk-nodejs17.svg?branch=master)](https://travis-ci.org/7in14/pk-nodejs17)
 [![Maintainability](https://api.codeclimate.com/v1/badges/ffb71be3b54db3f9382b/maintainability)](https://codeclimate.com/github/7in14/pk-nodejs17/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/ffb71be3b54db3f9382b/test_coverage)](https://codeclimate.com/github/7in14/pk-nodejs17/test_coverage)
+[![Known Vulnerabilities](https://snyk.io/test/github/7in14/pk-nodejs17/badge.svg?targetFile=package.json)](https://snyk.io/test/github/7in14/pk-nodejs17?targetFile=package.json)
 
 # Description
 Simple REST API build with Hapi v17

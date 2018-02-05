@@ -23,6 +23,7 @@
     "node": ">=8.0.0"
   },
   "dependencies": {
+    "boom": "^7.1.1",
     "confidence": "3.x.x",
     "glue": "5.0.0",
     "good": "^8.0.0",
@@ -32,6 +33,7 @@
     "got": "^8.0.3",
     "hapi": "17.2.0",
     "hoek": "5.0.2",
+    "joi": "^13.1.2",
     "pug": "^2.0.0-rc.4",
     "vision": "5.3.1",
     "visionary": "6.x.x"
