@@ -39,11 +39,24 @@ const manifest = {
                         myConsoleReporter: [{
                             module: 'good-squeeze',
                             name: 'Squeeze',
-                            args: [{ log: '*', response: '*' }]
+                            args: [{
+                                log: '*',
+                                response: '*'
+                            }]
                         }, {
                             module: 'good-console'
                         }, 'stdout']
                     }
+                }
+            },
+            {
+                plugin: 'hapi-mongodb',
+                options: {
+                    url: Config.get('/mongo/url'),
+                    settings: {
+                        poolSize: 10
+                    },
+                    decorate: true
                 }
             }
         ]

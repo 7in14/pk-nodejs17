@@ -32,6 +32,7 @@
     "good-squeeze": "^5.0.2",
     "got": "^8.0.3",
     "hapi": "17.2.0",
+    "hapi-mongodb": "^7.1.0",
     "hoek": "5.0.2",
     "joi": "^13.1.2",
     "pug": "^2.0.0-rc.4",
@@ -41,8 +42,10 @@
   "devDependencies": {
     "code": "5.1.2",
     "lab": "15.2.1",
+    "mongo-mock": "^3.0.0",
     "nock": "^9.1.6",
     "nodemon": "1.x.x",
-    "nyc": "^11.4.1"
+    "nyc": "^11.4.1",
+    "proxyquire": "^1.8.0"
   }
 }

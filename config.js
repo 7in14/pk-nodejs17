@@ -18,6 +18,14 @@ const config = {
             docker: 3000,
             $default: 8080
         }
+    },
+    mongo: {
+        url: {
+            $filter: 'env',
+            test: 'mongodb://testingDb:27017/test',
+            docker: process.env.DOCKER_MONGO || 'mongodb://172.17.0.3/7in14',
+            $default: 'mongodb://localhost:27017/7in14'
+        }
     }
 };
 
