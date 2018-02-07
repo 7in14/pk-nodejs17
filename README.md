@@ -30,23 +30,23 @@ Migrated to latest dependencies (Hapi 17.0) with the idea to create PR to jedire
 $ curl .:8080/api/ping
 ```
 
-## Read all notifiers
+## Read all data sources
 ```
-$ curl .:8080/api/notifier
+$ curl .:8080/api/dataSources
 ```
 
-## Read one notifier
+## Read one data source
 ```
-$ curl .:8080/api/notifier/1
+$ curl .:8080/api/dataSource/1
 ```
 
 ## Delete notifier
 ```
-$ curl -X 'DELETE' .:8080/api/notifier/1
+$ curl -X 'DELETE' .:8080/api/dataSource/1
 ```
 ## Add notifier
 ```
-$ curl -X 'PUT' .:8080/api/notifier -d '{"name":"new", "url":"http://google.com"}' -H 'content-type: application/json'
+$ curl -X 'PUT' .:8080/api/dataSource -d '{"name":"new", "url":"http://google.com"}' -H 'content-type: application/json'
 ```
 
 ## Crimes

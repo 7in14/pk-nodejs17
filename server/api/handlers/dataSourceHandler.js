@@ -1,5 +1,6 @@
 'use strict';
 const DataSourceIdValidator = require('../validators/dataSourceIdValidator');
+const DataSourceValidator = require('../validators/dataSourceValidator');
 
 const COLLECTION = 'pk_7in14';
 
@@ -81,7 +82,9 @@ const add = {
 
         return h.response(result)
             .code(201);
-    }
+    },
+
+    validate: DataSourceValidator.validate
 };
 
 module.exports = {
