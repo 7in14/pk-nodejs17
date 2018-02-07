@@ -21,7 +21,7 @@ const manifest = {
     },
     register: {
         plugins: [
-            'vision',
+         'vision',
             {
                 plugin: './server/api/index',
                 routes: {

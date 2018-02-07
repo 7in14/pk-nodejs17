@@ -1,45 +1,36 @@
 'use strict';
 const DataSourceIdValidator = require('../validators/dataSourceIdValidator');
 
-const dummyData = [{
-        id: '1',
-        name: 'notifier 1',
-        url: 'http://notifier1.com'
-    },
-    {
-        id: '2',
-        name: 'notifier 2',
-        url: 'http://notifier2.com'
-    }
-];
+const COLLECTION = 'pk_7in14';
 
 const getAll = {
 
-    handler(request, h) {
+    async handler(request, h) {
 
-        return dummyData;
+        const result = await request.mongo.db.collection(COLLECTION)
+            .find({})
+            .toArray();
+
+        return result;
     }
 };
 
 const del = {
 
-    handler(request, h) {
+    async handler(request, h) {
 
-        // todo: add JOI
-        const id = parseInt(request.params.id);
-
-        if (!id) {
-            return h.response(`Bad id provided <${id}>!`)
-                .code(400);
-        }
-
+        const id = request.params.id;
         console.info(`Trying to delete data source ${id}`);
 
-        const index = dummyData.findIndex((n) => n.id === id);
+        const result = await request.mongo.db.collection(COLLECTION)
+            .remove({
+                _id: new request.mongo.ObjectID(id)
+            });
 
-        if (index >= 0) {
-            dummyData.splice(index, 1);
-            return h.response(dummyData)
+        if (result && result.result.n === 1 && result.result.ok === 1) {
+
+            const all = await getAll.handler(request);
+            return h.response(all)
                 .code(202);
         }
 
@@ -53,22 +44,18 @@ const del = {
 
 const get = {
 
-    handler(request, h) {
+    async handler(request, h) {
 
-        // todo: add JOI
-        const id = parseInt(request.params.id);
-
-        if (!id) {
-            return h.response(`Bad id provided <${id}>!`)
-                .code(400);
-        }
-
+        const id = request.params.id;
         console.info(`Trying to get data source ${id}`);
 
-        const index = dummyData.findIndex((n) => n.id === id);
+        const result = await request.mongo.db.collection(COLLECTION)
+            .findOne({
+                _id: new request.mongo.ObjectID(id)
+            });
 
-        if (index >= 0) {
-            return dummyData[index];
+        if (result) {
+            return result;
         }
 
         // todo: add Boom
@@ -81,17 +68,18 @@ const get = {
 
 const add = {
 
-    handler(request, h) {
+    async handler(request, h) {
 
         const dataSource = request.payload;
 
-        console.info(`Trying to add notifier ${dataSource}`);
+        console.info(`Trying to add notifier ${JSON.stringify(dataSource)}`);
 
-        dummyData.push(dataSource);
-        dataSource.id = (dummyData.length + 1)
-            .toString();
+        const insertResult = await request.mongo.db.collection(COLLECTION)
+            .insert(dataSource);
 
-        return h.response(dummyData)
+        const result = await getAll.handler(request);
+
+        return h.response(result)
             .code(201);
     }
 };
