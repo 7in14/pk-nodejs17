@@ -6,8 +6,7 @@ const dataSourceIdValidator = {
     validate: {
         params: {
             id: Joi.string()
-                .min(1)
-                .optional()
+                .guid()
                 .description('id of the data source')
         },
         failAction: ErrorHandler.handleError
