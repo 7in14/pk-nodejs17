@@ -1,12 +1,12 @@
 'use strict';
 const Joi = require('joi');
+Joi.objectId = require('joi-objectid')(Joi);
 const ErrorHandler = require('../handlers/errorHandler');
 
 const dataSourceIdValidator = {
     validate: {
         params: {
-            id: Joi.string()
-                .guid()
+            id: Joi.objectId()
                 .description('id of the data source')
         },
         failAction: ErrorHandler.handleError
