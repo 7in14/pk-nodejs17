@@ -28,7 +28,7 @@ lab.experiment('File route', () => {
         const response = await server.inject(request);
 
         // Assert
-        Code.expect(response.result)
+        Code.expect(response.result.data)
             .to.match(/Sample generated Rest API/);
         Code.expect(response.statusCode)
             .to.equal(200);

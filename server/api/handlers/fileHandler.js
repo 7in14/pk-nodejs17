@@ -4,9 +4,13 @@ const Util = require('util');
 
 const options = {
 
-    handler(request, h) {
+    async handler(request, h) {
 
-        return Util.promisify(Fs.readFile)('README.md');
+        const data = await Util.promisify(Fs.readFile)('README.md');
+        return {
+            name: 'README.md',
+            data
+        };
     }
 };
 
