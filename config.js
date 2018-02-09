@@ -16,15 +16,17 @@ const config = {
             $filter: 'env',
             test: 9090,
             docker: 3000,
-            $default: 8081
+            prod: 80,
+            $default: 8080
         }
     },
     mongo: {
         url: {
             $filter: 'env',
             test: 'mongodb://testingDb:27017/test',
-            docker: process.env.DOCKER_MONGO || 'mongodb://172.17.0.3/7in14',
-            $default: 'mongodb://localhost:27017/7in14'
+            docker: process.env.MONGO || 'mongodb://172.17.0.3/7in14',
+            prod: process.env.MONGO,
+            $default: 'mongodb://localhost:27017/7in14',
         }
     }
 };
