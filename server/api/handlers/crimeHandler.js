@@ -23,25 +23,25 @@ const options = {
         const [error, crimesData] = await getCrimes();
 
         if (error) {
-            // todo: add boom
-            return h.response('Could not get Raleigh crimes\n' + error)
-                .code(500);
+            return Boom.serverUnavailable('Could not get Raleigh crimes from Open Data API', error);
         }
 
-        const crimes = JSON.parse(crimesData).map(({
-            district,
-            inc_datetime,
-            lcr,
-            lcr_desc
-        }) => {
-
-            return {
+        // map the results
+        const crimes = JSON.parse(crimesData)
+            .map(({
                 district,
                 inc_datetime,
                 lcr,
                 lcr_desc
-            };
-        });
+            }) => {
+
+                return {
+                    district,
+                    inc_datetime,
+                    lcr,
+                    lcr_desc
+                };
+            });
 
         if (!query || query.length < 1) {
             console.info('No query - returning all results');

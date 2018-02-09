@@ -1,4 +1,5 @@
 'use strict';
+const Boom = require('boom');
 const DataSourceIdValidator = require('../validators/dataSourceIdValidator');
 const DataSourceValidator = require('../validators/dataSourceValidator');
 
@@ -35,9 +36,7 @@ const del = {
                 .code(202);
         }
 
-        // todo: add Boom
-        return h.response(`Could not delete, data source with id ${id} not found`)
-            .code(404);
+        return Boom.notFound(`Could not delete, data source with id ${id} not found`, id);
     },
 
     validate: DataSourceIdValidator.validate
@@ -59,9 +58,7 @@ const get = {
             return result;
         }
 
-        // todo: add Boom
-        return h.response(`Data source with id ${id} not found`)
-            .code(404);
+        return Boom.notFound(`Data source with id ${id} not found`, id);
     },
 
     validate: DataSourceIdValidator.validate
