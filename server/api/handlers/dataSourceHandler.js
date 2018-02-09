@@ -29,7 +29,7 @@ const del = {
                 _id: new request.mongo.ObjectID(id)
             });
 
-        if (result && result.result.n === 1 && result.result.ok === 1) {
+        if (result.result.n === 1) {
 
             const all = await getAll.handler(request);
             return h.response(all)

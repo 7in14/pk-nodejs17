@@ -1,11 +1,14 @@
 'use strict';
 const Got = require('got');
+const Boom = require('boom');
 const CrimeValidator = require('../validators/crimeValidator');
 
 const getCrimes = async () => {
 
     try {
-        const crimesResponse = await Got('https://data.raleighnc.gov/resource/3bhm-we7a.json');
+        const crimesResponse = await Got('https://data.raleighnc.gov/resource/3bhm-we7a.json', {
+            json: true
+        });
         return [null, crimesResponse.body];
     } catch (e) {
         return [e.response.body];
@@ -23,11 +26,11 @@ const options = {
         const [error, crimesData] = await getCrimes();
 
         if (error) {
-            return Boom.serverUnavailable('Could not get Raleigh crimes from Open Data API', error);
+            return Boom.serverUnavailable('Could not get Raleigh crimes from Open Data API. Error: ' + error);
         }
 
         // map the results
-        const crimes = JSON.parse(crimesData)
+        const crimes = crimesData
             .map(({
                 district,
                 inc_datetime,

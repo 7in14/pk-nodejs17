@@ -28,7 +28,7 @@ const crimeData = [{
 
 lab.experiment('Crime route', () => {
 
-    lab.test('it returns 500 when Crime Data API responds with error', async () => {
+    lab.test('it returns 503 when Crime Data API responds with error', async () => {
 
         // Arrange
         var crimeApi = Nock('https://data.raleighnc.gov')
@@ -43,10 +43,10 @@ lab.experiment('Crime route', () => {
         const response = await server.inject(request);
 
         // Assert
-        Code.expect(response.result)
+        Code.expect(response.result.message)
             .to.match(/Some error/);
         Code.expect(response.statusCode)
-            .to.equal(500);
+            .to.equal(503);
         Code.expect(crimeApi.isDone())
             .to.be.true();
     });
