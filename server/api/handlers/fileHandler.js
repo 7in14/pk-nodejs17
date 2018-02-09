@@ -6,7 +6,7 @@ const options = {
 
     async handler(request, h) {
 
-        const data = await Util.promisify(Fs.readFile)('README.md');
+        const data = await Util.promisify(Fs.readFile)('README.md', 'utf8');
         return {
             name: 'README.md',
             data
