@@ -1,23 +1,18 @@
-sudo: false
+env:
+  global:
+    - CC_TEST_REPORTER_ID=3aa5c671ba591835c3f369d6a7fc4712990f53b98bcdc0bea8ac86c79ccef2d6
+
 language: node_js
 node_js:
   - 8
 
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+
 script:
   - yarn nyc
 
-machine:
-  environment:
-    CC_TEST_REPORTER_ID: 3aa5c671ba591835c3f369d6a7fc4712990f53b98bcdc0bea8ac86c79ccef2d6
-
-dependencies:
-  post:
-    - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-    - chmod +x ./cc-test-reporter
-
-test:
-  pre:
-    - ./cc-test-reporter before-build
-
-  post:
-    - ./cc-test-reporter after-build --exit-code $EXIT_CODE
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
