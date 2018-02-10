@@ -4,6 +4,7 @@ const DataSourceHandler = require('./handlers/dataSourceHandler');
 const FileHandler = require('./handlers/fileHandler');
 const CrimeHandler = require('./handlers/crimeHandler');
 const WelcomeHandler = require('./handlers/welcomeHandler');
+const AllDataHandler = require('./handlers/allDataHandler');
 
 const register = function (server, options) {
 
@@ -53,6 +54,12 @@ const register = function (server, options) {
         method: 'GET',
         path: '/raleigh/crime',
         options: CrimeHandler
+    });
+
+    server.route({
+        method: 'GET',
+        path: '/allData',
+        options: AllDataHandler
     });
 };
 
