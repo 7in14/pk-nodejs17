@@ -2,16 +2,13 @@
 const Fs = require('fs');
 const Util = require('util');
 const Got = require('got');
+const DataSourceHandler = require('./dataSourceHandler');
 
 const options = {
 
     async handler(request, h) {
 
-        const COLLECTION = 'pk_7in14';
-
-        const results = await request.mongo.db.collection(COLLECTION)
-            .find({})
-            .toArray();
+        const results = await DataSourceHandler.getAll.handler(request, h);
 
         const promises = results.map((ds) => {
 
@@ -24,6 +21,7 @@ const options = {
 
 const getDataPromise = async (url, name) => {
 
+    console.log(`Calling ${name}, using url: ${url}`);
     return Got(url, {
             json: true
         })
@@ -36,7 +34,7 @@ const getDataPromise = async (url, name) => {
         .catch((e) => {
             return {
                 name,
-                error: e
+                error: e.response.body
             };
         });
 };
