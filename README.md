@@ -1,4 +1,4 @@
-# sample
+# About
 
 Sample generated Rest API
 
@@ -37,21 +37,26 @@ $ curl .:8080/api/dataSources
 
 ## Read one data source
 ```
-$ curl .:8080/api/dataSource/1
+$ curl .:8080/api/dataSource/[guid]
 ```
 
-## Delete notifier
+## Delete data source
 ```
-$ curl -X 'DELETE' .:8080/api/dataSource/1
+$ curl -X 'DELETE' .:8080/api/dataSource/[guid]
 ```
-## Add notifier
+## Add data source
 ```
 $ curl -X 'PUT' .:8080/api/dataSource -d '{"name":"new", "url":"http://google.com"}' -H 'content-type: application/json'
 ```
 
-## Crimes
+## Get crimes
 ```
 curl ".:8080/api/raleigh/crime?query=Drug"
+```
+
+## Get all data - from data sources
+```
+curl .:8080/api/allData
 ```
 
 ## License
