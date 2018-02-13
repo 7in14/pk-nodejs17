@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon server.js -e js,pug",
     "start": "node server.js",
-    "test": "lab -c -L -C -v -m 0 --threshold 95 --assert code",
+    "test": "lab -c -L -l -C -v -m 0 --threshold 95 --assert code",
     "test-cover": "lab -c -L --assert code -r html -o ./test/artifacts/coverage.html && open ./test/artifacts/coverage.html",
     "nyc": "nyc yarn test && nyc report --reporter=lcovonly"
   },
