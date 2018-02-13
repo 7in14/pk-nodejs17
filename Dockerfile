@@ -13,4 +13,4 @@ RUN yarn
 ENV NODE_ENV docker
 
 EXPOSE 3000
-CMD [ "yarn", "start" ]
+CMD [ "yarn", "dev" ]
