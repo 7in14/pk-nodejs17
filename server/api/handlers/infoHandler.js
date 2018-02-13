@@ -1,6 +1,8 @@
 'use strict';
 const tt = require('timethat');
 const os = require('os');
+const MB = 1024 * 1000;
+const GB = MB * 1000;
 
 const options = {
 
@@ -10,11 +12,25 @@ const options = {
     }
 };
 
+const getOsInfo = function () {
+
+    // filter out the required OS info
+    const cpu = os.cpus();
+    const osInfo = {
+        totalmem: Math.round(os.totalmem() / GB),
+        freemem: Math.round(os.freemem() / GB),
+        core: cpu.length,
+        model: cpu[0].model,
+        speed: cpu[0].speed,
+        hostname: os.hostname()
+    };
+
+    return osInfo;
+}
+
 const getSystemInfo = async function () {
     const sys = {},
         proc = process,
-        MB = 1024 * 1000,
-        GB = MB * 1000,
         defaultString = '-';
 
     // filter out the required process info
@@ -36,16 +52,7 @@ const getSystemInfo = async function () {
         heapTotal: Math.round(sys.proc.memv8.heapTotal / MB)
     };
 
-    // filter out the required OS info
-    const cpu = os.cpus();
-    sys.os = {
-        totalmem: Math.round(os.totalmem() / GB),
-        freemem: Math.round(os.freemem() / GB),
-        core: cpu.length,
-        model: cpu[0].model,
-        speed: cpu[0].speed,
-        hostname: os.hostname()
-    };
+    sys.os = getOsInfo();
 
     return sys;
 };
