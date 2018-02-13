@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon server.js -e js,pug",
     "start": "node server.js",
-    "test": "lab -c -L -C -l -v -m 0 --threshold 95 --assert code",
+    "test": "lab -c -L -l -C -v -m 0 --threshold 95 --assert code",
     "test-cover": "lab -c -L --assert code -r html -o ./test/artifacts/coverage.html && open ./test/artifacts/coverage.html",
     "nyc": "nyc yarn test && nyc report --reporter=lcovonly"
   },
@@ -38,6 +38,7 @@
     "joi": "^13.1.2",
     "joi-objectid": "^2.0.0",
     "pug": "^2.0.0-rc.4",
+    "timethat": "^0.0.3",
     "vision": "5.3.1",
     "visionary": "6.x.x"
   },
