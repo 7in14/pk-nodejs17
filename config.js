@@ -16,7 +16,7 @@ const config = {
             $filter: 'env',
             test: 9090,
             docker: 3000,
-            prod: 80,
+            prod: process.env.PORT || 8080,
             $default: 8080
         }
     },
