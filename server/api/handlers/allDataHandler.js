@@ -34,7 +34,7 @@ const getDataPromise = async (url, name) => {
         .catch((e) => {
             return {
                 name,
-                error: e.response.body
+                error: (e.response && e.response.body) || e
             };
         });
 };

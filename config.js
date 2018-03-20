@@ -26,7 +26,7 @@ const config = {
             test: 'mongodb://testingDb:27017/test',
             docker: 'mongodb://mongo/7in14',
             prod: process.env.MONGO,
-            $default: 'mongodb://localhost:27017/7in14',
+            $default: 'mongodb://localhost:27017/pk_7in14',
         }
     }
 };
