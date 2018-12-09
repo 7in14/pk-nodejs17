@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "boom": "^7.1.1",
-    "confidence": "3.x.x",
+    "confidence": "3.0.2",
     "glue": "5.0.0",
     "good": "^8.0.0",
     "good-console": "^7.0.1",
@@ -37,10 +37,10 @@
     "hoek": "5.0.3",
     "joi": "^13.1.2",
     "joi-objectid": "^2.0.0",
-    "pug": "^2.0.0-rc.4",
+    "pug": "^2.0.0",
     "timethat": "^0.0.3",
     "vision": "5.3.1",
-    "visionary": "6.x.x"
+    "visionary": "6.0.2"
   },
   "devDependencies": {
     "code": "5.1.2",
