@@ -37,7 +37,7 @@
     "hoek": "5.0.3",
     "joi": "^13.1.2",
     "joi-objectid": "^2.0.0",
-    "pug": "^2.0.0-rc.4",
+    "pug": "^2.0.0",
     "timethat": "^0.0.3",
     "vision": "5.3.1",
     "visionary": "6.x.x"
