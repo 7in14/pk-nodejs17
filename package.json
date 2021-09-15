@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "boom": "^7.1.1",
-    "confidence": "3.x.x",
+    "confidence": "5.0.0",
     "glue": "5.0.0",
     "good": "^8.0.0",
     "good-console": "^7.0.1",
