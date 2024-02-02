@@ -334,10 +334,6 @@ bcrypt-pbkdf@^1.0.0:
   dependencies:
     tweetnacl "^0.14.3"
 
-big-time@2.x.x:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/big-time/-/big-time-2.0.0.tgz#70193b60faff72c96ed52331b555490e604d7ccc"
-
 binary-extensions@^1.0.0:
   version "1.11.0"
   resolved "https://registry.yarnpkg.com/binary-extensions/-/binary-extensions-1.11.0.tgz#46aa1751fb6a2f93ee5e689bb1087d4b14c6c205"
@@ -372,11 +368,18 @@ boom@6.x.x:
   dependencies:
     hoek "5.x.x"
 
-boom@7.x.x, boom@^7.1.1:
+boom@7.x.x:
   version "7.1.1"
   resolved "https://registry.yarnpkg.com/boom/-/boom-7.1.1.tgz#50392a4e3417e971f1ad28622c20e832275260bb"
   dependencies:
     hoek "5.x.x"
+
+boom@^7.3.0:
+  version "7.3.0"
+  resolved "https://registry.yarnpkg.com/boom/-/boom-7.3.0.tgz#733a6d956d33b0b1999da3fe6c12996950d017b9"
+  integrity sha512-Swpoyi2t5+GhOEGw8rEsKvTxFLIDiiKoUc2gsoV6Lyr43LHBIzch3k2MvYUs8RTROrIkVJ3Al0TkaOGjnb+B6A==
+  dependencies:
+    hoek "6.x.x"
 
 bossy@4.x.x:
   version "4.0.1"
@@ -523,13 +526,13 @@ caseless@~0.12.0:
   version "0.12.0"
   resolved "https://registry.yarnpkg.com/caseless/-/caseless-0.12.0.tgz#1b681c21ff84033c826543090689420d187151dc"
 
-catbox-memory@3.x.x:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/catbox-memory/-/catbox-memory-3.1.1.tgz#4f398835a3d8f5992c31ddee24378467498a9c9a"
+catbox-memory@4.x.x:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/catbox-memory/-/catbox-memory-4.0.1.tgz#3371ae0dd91bbf5d9dd88dcab5332470354cbd1f"
+  integrity sha512-ZmqNiLsYCIu9qvBJ/MQbznDV2bFH5gFiH67TgIJgSSffJFtTXArT+MM3AvJQlby9NSkLHOX4eH/uuUqnch/Ldw==
   dependencies:
-    big-time "2.x.x"
     boom "7.x.x"
-    hoek "5.x.x"
+    hoek "6.x.x"
 
 catbox@10.x.x:
   version "10.0.2"
@@ -1455,22 +1458,24 @@ globby@^5.0.0:
     pify "^2.0.0"
     pinkie-promise "^2.0.0"
 
-glue@5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/glue/-/glue-5.0.0.tgz#dd5bf32bfadff7cfd8afe3a5b816e2f6937ea6c9"
+glue@6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/glue/-/glue-6.0.0.tgz#34467f5f61295adaa9d299b3917a92a0be24edc5"
+  integrity sha512-2pckNxRkU6XqZCrCSoCnfbbr0eBKRpGSLUQrF0L09ihJzBQYYuwxoZOR0YkeNP9SYnhDJHkNwYGvSVMZRcE12g==
   dependencies:
-    hapi "17.x.x"
-    hoek "5.x.x"
-    joi "13.x.x"
+    hapi "18.x.x"
+    hoek "6.x.x"
+    joi "14.x.x"
 
-good-console@^7.0.1:
-  version "7.0.1"
-  resolved "https://registry.yarnpkg.com/good-console/-/good-console-7.0.1.tgz#544f184f02e6842ab07e7ee900968cc33dc6a533"
+good-console@^8.0.0:
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/good-console/-/good-console-8.0.0.tgz#cc7262081f09fac5678b397e8847c194fbf85f64"
+  integrity sha512-+TIZjkwZhzaeqVQqLLVyMjbuwlBHQ9N4o1cp5VwVo9X68ilvqV0fVIv/ftRiTER5fPieWyyXymL4ZXWH8APtbg==
   dependencies:
-    hoek "4.x.x"
-    joi "12.x.x"
-    json-stringify-safe "5.0.x"
-    moment "2.20.x"
+    hoek "6.x.x"
+    joi "14.x.x"
+    json-stringify-safe "5.x.x"
+    moment "2.x.x"
 
 good-http@^6.1.3:
   version "6.1.3"
@@ -1486,12 +1491,13 @@ good-squeeze@^5.0.2:
     fast-safe-stringify "1.1.x"
     hoek "4.x.x"
 
-good@^8.0.0:
-  version "8.0.0"
-  resolved "https://registry.yarnpkg.com/good/-/good-8.0.0.tgz#4f2de671ddda68626c8f8b46383bddf0fdb46a90"
+good@^8.1.2:
+  version "8.1.2"
+  resolved "https://registry.yarnpkg.com/good/-/good-8.1.2.tgz#de601cf25202a486b9ef5475c218bc178414e8eb"
+  integrity sha512-yQ/OE+b8pY+Uc79zrv7PpzWSORI+scyeItIgkOx6PhYKkdnwhtXPGCOhZVv5rbcuVrLeh73HcjkwcOQbYMTJkw==
   dependencies:
-    hoek "5.x.x"
-    joi "13.x.x"
+    hoek "6.x.x"
+    joi "14.x.x"
     oppsy "2.x.x"
     pumpify "1.3.x"
 
@@ -1574,9 +1580,10 @@ hapi-scope-start@2.x.x:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/hapi-scope-start/-/hapi-scope-start-2.1.1.tgz#7495a726fe72b7bca8de2cdcc1d87cd8ce6ab4f2"
 
-hapi@17.2.0, hapi@17.x.x:
-  version "17.2.0"
-  resolved "https://registry.yarnpkg.com/hapi/-/hapi-17.2.0.tgz#e5d74b65235b443225e05d7b7510cdb80d4887e7"
+hapi@18.1.0, hapi@18.x.x:
+  version "18.1.0"
+  resolved "https://registry.yarnpkg.com/hapi/-/hapi-18.1.0.tgz#98a2a5a8f37a41eb196bdad9727f66b1fbca5fec"
+  integrity sha512-nSU1VLyTAgp7P5gy47QzJIP2JAb+wOFvJIV3gnL0lFj/mD+HuTXhyUsDYXjF/dhADMVXVEz31z6SUHBJhtsvGA==
   dependencies:
     accept "3.x.x"
     ammo "3.x.x"
@@ -1584,13 +1591,14 @@ hapi@17.2.0, hapi@17.x.x:
     bounce "1.x.x"
     call "5.x.x"
     catbox "10.x.x"
-    catbox-memory "3.x.x"
+    catbox-memory "4.x.x"
     heavy "6.x.x"
-    hoek "5.x.x"
-    joi "13.x.x"
+    hoek "6.x.x"
+    joi "14.x.x"
     mimos "4.x.x"
     podium "3.x.x"
     shot "4.x.x"
+    somever "2.x.x"
     statehood "6.x.x"
     subtext "6.x.x"
     teamwork "3.x.x"
@@ -1700,6 +1708,11 @@ hoek@5.0.3:
 hoek@5.x.x:
   version "5.0.2"
   resolved "https://registry.yarnpkg.com/hoek/-/hoek-5.0.2.tgz#d2f2c95d36fe7189cf8aa8c237abc1950eca1378"
+
+hoek@6.x.x:
+  version "6.1.3"
+  resolved "https://registry.yarnpkg.com/hoek/-/hoek-6.1.3.tgz#73b7d33952e01fe27a38b0457294b79dd8da242c"
+  integrity sha512-YXXAAhmF9zpQbC7LEcREFtXfGq5K1fmd+4PHkBq8NUqmzW3G+Dq10bI/i0KucLRwss3YYFQ0fSfoxBZYiGUqtQ==
 
 hosted-git-info@^2.1.4:
   version "2.5.0"
@@ -2127,19 +2140,20 @@ joi-objectid@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/joi-objectid/-/joi-objectid-2.0.0.tgz#56549573a66ba795dcf6b9e226de5f3b2d36ec3a"
 
-joi@12.x.x:
-  version "12.0.0"
-  resolved "https://registry.yarnpkg.com/joi/-/joi-12.0.0.tgz#46f55e68f4d9628f01bbb695902c8b307ad8d33a"
-  dependencies:
-    hoek "4.x.x"
-    isemail "3.x.x"
-    topo "2.x.x"
-
 joi@13.x.x:
   version "13.1.1"
   resolved "https://registry.yarnpkg.com/joi/-/joi-13.1.1.tgz#1f306a5c3ded496da46629915d09e1ae3825185c"
   dependencies:
     hoek "5.x.x"
+    isemail "3.x.x"
+    topo "3.x.x"
+
+joi@14.x.x:
+  version "14.3.1"
+  resolved "https://registry.yarnpkg.com/joi/-/joi-14.3.1.tgz#164a262ec0b855466e0c35eea2a885ae8b6c703c"
+  integrity sha512-LQDdM+pkOrpAn4Lp+neNIFV3axv1Vna3j38bisbQhETPMANYRbFJFUyOZcOClYvM/hppMhGWuKSFEK9vjrB+bQ==
+  dependencies:
+    hoek "6.x.x"
     isemail "3.x.x"
     topo "3.x.x"
 
@@ -2196,7 +2210,7 @@ json-stable-stringify@1.x.x, json-stable-stringify@^1.0.1:
   dependencies:
     jsonify "~0.0.0"
 
-json-stringify-safe@5.0.x, json-stringify-safe@5.x.x, json-stringify-safe@^5.0.1, json-stringify-safe@~5.0.1:
+json-stringify-safe@5.x.x, json-stringify-safe@^5.0.1, json-stringify-safe@~5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/json-stringify-safe/-/json-stringify-safe-5.0.1.tgz#1296a2d58fd45f19a0f6ce01d65701e2c735b6eb"
 
@@ -2504,9 +2518,10 @@ module-not-found-error@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/module-not-found-error/-/module-not-found-error-1.0.1.tgz#cf8b4ff4f29640674d6cdd02b0e3bc523c2bbdc0"
 
-moment@2.20.x:
-  version "2.20.1"
-  resolved "https://registry.yarnpkg.com/moment/-/moment-2.20.1.tgz#d6eb1a46cbcc14a2b2f9434112c1ff8907f313fd"
+moment@2.x.x:
+  version "2.30.1"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.30.1.tgz#f8c91c07b7a786e30c59926df530b4eac96974ae"
+  integrity sha512-uEmtNhbDOrWPFS+hdjFCBfy9f2YoyzRpwcl+DqpC6taX21FzsTLQVbMV/W7PzNSX6x/bhC1zA3c2UQ5NzH6how==
 
 mongo-mock@^3.0.0:
   version "3.0.0"
@@ -3497,6 +3512,14 @@ sntp@1.x.x:
   dependencies:
     hoek "2.x.x"
 
+somever@2.x.x:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/somever/-/somever-2.0.0.tgz#7bdbed3bee8ece2c7c8a2e7d9a1c022bd98d6c89"
+  integrity sha512-9JaIPP+HxwYGqCDqqK3tRaTqdtQHoK6Qy3IrXhIt2q5x8fs8RcfU7BMWlFTCOgFazK8p88zIv1tHQXvAwtXMyw==
+  dependencies:
+    bounce "1.x.x"
+    hoek "6.x.x"
+
 sort-keys@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/sort-keys/-/sort-keys-2.0.0.tgz#658535584861ec97d730d6cf41822e1f56684128"
@@ -3810,12 +3833,6 @@ token-stream@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/token-stream/-/token-stream-0.0.1.tgz#ceeefc717a76c4316f126d0b9dbaa55d7e7df01a"
 
-topo@2.x.x:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/topo/-/topo-2.0.2.tgz#cd5615752539057c0dc0491a621c3bc6fbe1d182"
-  dependencies:
-    hoek "4.x.x"
-
 topo@3.x.x:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/topo/-/topo-3.0.0.tgz#37e48c330efeac784538e0acd3e62ca5e231fe7a"
@@ -3986,14 +4003,15 @@ vise@3.x.x:
   dependencies:
     hoek "5.x.x"
 
-vision@5.3.1:
-  version "5.3.1"
-  resolved "https://registry.yarnpkg.com/vision/-/vision-5.3.1.tgz#43d1efa60eb254c7b257ec0248ade64f3a8836f5"
+vision@5.4.4:
+  version "5.4.4"
+  resolved "https://registry.yarnpkg.com/vision/-/vision-5.4.4.tgz#981b2d811a6061cc14cf2d5d05ad3bbc3ee59572"
+  integrity sha512-jFeH7pU/ODYmTOpY5jutMKU/fDr+P621WYEnWgqwDikxutBWJ+koxlgGnkZQoKY6JlYdY4Awo+rPN3DNdTeDKg==
   dependencies:
     boom "7.x.x"
-    hoek "5.x.x"
+    hoek "6.x.x"
     items "2.x.x"
-    joi "13.x.x"
+    joi "14.x.x"
 
 visionary@6.x.x:
   version "6.0.2"
